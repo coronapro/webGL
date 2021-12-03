@@ -10,6 +10,10 @@ body {
   
     /* color text */
     color: #444;
+
+    background-color: lavenderblush;
+    height: 100vh;
+    width: 100vw;
   }
   
   h1 {

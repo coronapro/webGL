@@ -4,24 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three.js Course1</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js"
-    integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg=="
-    crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script> 
-</head> 
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-    }
-</style>
-
+    <title>three.js bootcamp</title>
+    <link rel="stylesheet" href="../docs/styles/main.css" type="text/css">
+    <script type="module" src="./src/main.js"></script>
+    <script type="module">
+        // Find the latest version by visiting https://cdn.skypack.dev/three.
+        import * as THREE from 'https://cdn.skypack.dev/three@0.134';
+      </script>
+    
+</head>
 <body>
-    <!-- container for the canvas -->
-    <div class="webGLContainer">
-
+    <h1>beep boop </h1>
+    <p>Arrastra sobre el modelo para girarlo. <br>Haz zoom con scroll o pinzando los dedos. </p>
+    <div id="scene-container"> 
+        
     </div>
-    <script src="./cascade.js"></script>
+   
 </body>
 </html>

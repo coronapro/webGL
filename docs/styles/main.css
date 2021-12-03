@@ -36,8 +36,8 @@ body {
   #scene-container {
     /* tell our scene container to take up the full page */
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 100vw;
+    height: 100vh;
   
     /*
       Set the container's background color to the same as the scene's

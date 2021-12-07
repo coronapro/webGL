@@ -41,7 +41,7 @@ class World {
 
         loop.updatables.push(controls);
 
-        scene.add( light, ambientLight);
+        scene.add(light, ambientLight, cascade);
         // cube.add(cubeb);
         
         // cube.position.x = 0;
@@ -57,11 +57,11 @@ class World {
     }
 
     //asynchronous staging
-    async init() {
-        const{ cascade } = await loadCascade();
+    // async init() {
+    //     const{ cascade } = await loadCascade();
 
-        scene.add(cascade);
-    } 
+    //     scene.add(cascade);
+    // } 
 
 
     //renders the scene

@@ -11,12 +11,12 @@ function createLights(){
     const ambientLight = new HemisphereLight(
         'antiquewhite', //bright sky color
         'white', //dim ground color
-        6,
+        8,
     );
 
 
     //create a directional light
-    const light = new DirectionalLight('white', 8);
+    const light = new DirectionalLight('white', 5);
 
     //Move the light right, up and towards us
     light.position.set(5,10,0);

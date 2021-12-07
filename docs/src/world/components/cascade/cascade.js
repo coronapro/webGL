@@ -19,13 +19,16 @@ import { setupModel } from './setupModel.js'
 //     return material;
 // }
 
+let cascadeMesh
+
 async function loadCascade() {
     //instance of GLTF loader
     const loader = new GLTFLoader();
     //load model data with loader
-    const cascadeData = await loader.loadAsync('assets/cascadeGris.glb')
+    const cascadeData = await loader.loadAsync('assets/bake_corona.glb')
 
     console.log('cascade ha cargado', cascadeData);
+    // cascadeData.scene.traverse
     
     //assign model data to a geometry
     const cascade = setupModel(cascadeData);
@@ -33,12 +36,12 @@ async function loadCascade() {
     return { cascade };
 }
 
-// loasCascade.traverse 
+loasCascade.traverse 
 
-// const material = createMaterial();
+const material = createMaterial();
 
     
-// const mesh = new Mesh(cascade, material);
+const mesh = new Mesh(cascade, material);
 
 
 

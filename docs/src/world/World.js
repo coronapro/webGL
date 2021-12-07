@@ -41,7 +41,7 @@ class World {
 
         loop.updatables.push(controls);
 
-        scene.add(light, ambientLight, cascade);
+        scene.add(light, ambientLight);
         // cube.add(cubeb);
         
         // cube.position.x = 0;
@@ -56,12 +56,12 @@ class World {
         // }
     }
 
-    //asynchronous staging
-    // async init() {
-    //     const{ cascade } = await loadCascade();
+    // asynchronous staging
+    async init() {
+        const{ model } = await loadCascade('assets/bake_corona.glb', 'assets/tile1Color.jpg');
 
-    //     scene.add(cascade);
-    // } 
+        scene.add(model);
+    } 
 
 
     //renders the scene

@@ -4,6 +4,8 @@ import {
     MeshStandardMaterial,
     Mesh,
     TextureLoader,
+    CubeTextureLoader,
+    Color,
 } from "https://cdn.skypack.dev/three@0.134/"
 
 import { setupModel } from './setupModel.js'
@@ -20,7 +22,17 @@ import { setupModel } from './setupModel.js'
 // }
 
 
-async function loadCascade(modelPath, texturePath) {
+async function loadCascade(modelPath, texturePath, scene) {
+
+    let urls = [
+        './assets/posx.jpg', './assets/negx.jpg',
+        './assets/posy.jpg', './assets/negy.jpg',
+        './assets/posz.jpg', './assets/negz.jpg',
+    ];
+
+    let cubo = new CubeTextureLoader();
+    let fondo = cubo.load(urls)
+
 
     const textureLoader = new TextureLoader();
 
@@ -34,11 +46,34 @@ async function loadCascade(modelPath, texturePath) {
     //load model data with loader
     const {scene: model} = await loader.loadAsync(modelPath)
 
+    const envMap = await textureLoader.loadAsync('assets/envMap.png');
+    envMap.flipY = false;
+
+    const color2 = new Color( 0xff0000 )
+
     model.traverse((o) => {
-        if (o.isMesh) {
-            o.material.map = texture;
+        console.log(typeof(o));
+       //material cromado
+        if (o.id == 17) {
+            
+            o.material.roughness = 0.08;
             o.material.metalness = 1;
+            o.material.envMap = fondo;
+            o.material.envMapIntensity = 1;
             o.material.needsUpdate = true;
+        }
+
+        //material plastico
+        if (o.id == 18) {
+            o.material.color = color2;
+            o.material.roughness = 0.8;
+        
+
+        }
+
+        //material etiqueta
+        if (o.id == 19) {
+            o.material.map = texture;
         }
     });
 

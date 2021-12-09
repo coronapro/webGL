@@ -16,10 +16,11 @@ function createLights(){
 
 
     //create a directional light
-    const light = new DirectionalLight('white', 5);
+    const light = new DirectionalLight('white', 10);
 
     //Move the light right, up and towards us
     light.position.set(5,10,0);
+    light.castShadow = true;
 
     
     return {light, ambientLight};

@@ -58,7 +58,8 @@ class World {
 
     // asynchronous staging
     async init() {
-        const{ model } = await loadCascade('assets/bake_corona.glb', 'assets/tile1Color.jpg');
+        const{ model } = await loadCascade('assets/bakecorona.glb', 'assets/corona.png', scene);
+    
 
         scene.add(model);
     } 

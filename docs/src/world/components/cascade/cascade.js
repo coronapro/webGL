@@ -25,9 +25,9 @@ import { setupModel } from './setupModel.js'
 async function loadCascade(modelPath, texturePath, scene) {
 
     let urls = [
-        './assets/posx.jpg', './assets/negx.jpg',
-        './assets/posy.jpg', './assets/negy.jpg',
-        './assets/posz.jpg', './assets/negz.jpg',
+        './assets/posx.png', './assets/negx.png',
+        './assets/posy.png', './assets/negy.png',
+        './assets/posz.png', './assets/negz.png',
     ];
 
     let cubo = new CubeTextureLoader();
@@ -50,22 +50,24 @@ async function loadCascade(modelPath, texturePath, scene) {
     envMap.flipY = false;
 
     const color2 = new Color( 0xff0000 )
+    const gris = new Color( 'gray' )
 
     model.traverse((o) => {
         console.log(typeof(o));
        //material cromado
         if (o.id == 17) {
             
-            o.material.roughness = 0.08;
+            o.material.roughness = 0;
             o.material.metalness = 1;
             o.material.envMap = fondo;
-            o.material.envMapIntensity = 1;
+            o.material.envMapIntensity = 1.5;
             o.material.needsUpdate = true;
+            
         }
 
         //material plastico
         if (o.id == 18) {
-            o.material.color = color2;
+            o.material.color = gris;
             o.material.roughness = 0.8;
         
 
@@ -74,6 +76,8 @@ async function loadCascade(modelPath, texturePath, scene) {
         //material etiqueta
         if (o.id == 19) {
             o.material.map = texture;
+            o.material.aplhaMap = texture;
+            o.material.color = gris;
         }
     });
 

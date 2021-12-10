@@ -8,7 +8,7 @@ function createCamera() {
         100, //far clipping
     );
 
-    camera.position.set(0, 1, 2);
+    camera.position.set(0, 0.5, 2);
     // camera.tick = () =>{
     //     camera.position.z += 0.1;
     // }

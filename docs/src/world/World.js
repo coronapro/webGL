@@ -62,6 +62,8 @@ class World {
     
 
         scene.add(model);
+        model.rotation.y = 2;
+        model.scale.set (1.5,1.5,1.5);
     } 
 
 
